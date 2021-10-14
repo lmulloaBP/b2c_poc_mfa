@@ -6,7 +6,7 @@
   PolicySchemaVersion="0.3.0.0"
   TenantId="{Settings:Tenant}"
   PolicyId="B2C_1A_POCTrustFrameworkBase"
-  PublicPolicyUri="http://{Settings:Tenant}/B2C_1A_POCTrustFrameworkBasePOC">
+  PublicPolicyUri="http://{Settings:Tenant}/B2C_1A_POCTrustFrameworkBase">
 
   <BuildingBlocks>
     <ClaimsSchema>
