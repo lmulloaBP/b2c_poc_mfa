@@ -5,12 +5,12 @@
   xmlns="http://schemas.microsoft.com/online/cpim/schemas/2013/06" 
   PolicySchemaVersion="0.3.0.0" 
   TenantId="{Settings:Tenant}" 
-  PolicyId="B2C_1A_TrustFrameworkLocalization" 
-  PublicPolicyUri="http://{Settings:Tenant}/B2C_1A_TrustFrameworkLocalization">
+  PolicyId="B2C_1A_POCTrustFrameworkLocalization" 
+  PublicPolicyUri="http://{Settings:Tenant}/B2C_1A_POCTrustFrameworkLocalization">
 
   <BasePolicy>
     <TenantId>{Settings:Tenant}</TenantId>
-    <PolicyId>B2C_1A_TrustFrameworkBase</PolicyId>
+    <PolicyId>B2C_1A_POCTrustFrameworkBase</PolicyId>
   </BasePolicy>
 
   <BuildingBlocks>
