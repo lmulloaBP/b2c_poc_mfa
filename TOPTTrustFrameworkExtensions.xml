@@ -49,7 +49,7 @@
       Note: the paged run JavaScript. Use custom or shared domain to allow running client side code -->
       <ContentDefinition Id="api.selfasserted.appfactor.registration">
         <!--<LoadUri>~/tenant/default/selfasserted.cshtml</LoadUri>-->
-        <LoadUri>https://your-app.azurewebsites.net/selfasserted-appfactor-registration.html</LoadUri>
+        <LoadUri>https://stportalcartera.blob.core.windows.net/test/selfasserted-appfactor-registration.html</LoadUri>
         <RecoveryUri>~/common/default_page_error.html</RecoveryUri>
         <DataUri>urn:com:microsoft:aad:b2c:elements:contract:selfasserted:1.2.0</DataUri>
         <Metadata>
@@ -118,8 +118,8 @@
                 For more information: https://docs.microsoft.com/en-us/azure/active-directory-b2c/active-directory-b2c-create-custom-attributes-profile-edit-custom 
                 Action required: Insert objectId and appId here -->
           <Metadata>
-            <Item Key="ApplicationObjectId">00000000-0000-0000-0000-000000000000</Item>
-            <Item Key="ClientId">00000000-0000-0000-0000-000000000000</Item>
+            <Item Key="ApplicationObjectId">2057a980-f569-4889-8c6b-1470527050ed</Item>
+            <Item Key="ClientId">13292f57-9c92-43e9-b065-949909bdca11</Item>
           </Metadata>
         </TechnicalProfile>
 
@@ -250,7 +250,23 @@
         </TechnicalProfile>
       </TechnicalProfiles>
     </ClaimsProvider>
-    
+
+    <ClaimsProvider>  
+      <DisplayName>Local Account SignIn</DisplayName>
+      <TechnicalProfiles>
+         <TechnicalProfile Id="login-NonInteractive">
+          <Metadata>
+            <Item Key="client_id">{Settings:ProxyIdentityExperienceFrameworkAppId}</Item>
+            <Item Key="IdTokenAudience">{Settings:IdentityExperienceFrameworkAppId}</Item>
+          </Metadata>
+          <InputClaims>
+            <InputClaim ClaimTypeReferenceId="client_id" DefaultValue="{Settings:ProxyIdentityExperienceFrameworkAppId}" />
+            <InputClaim ClaimTypeReferenceId="resource_id" PartnerClaimType="resource" DefaultValue="{Settings:IdentityExperienceFrameworkAppId}" />
+          </InputClaims>
+        </TechnicalProfile>
+      </TechnicalProfiles>
+    </ClaimsProvider>
+
   </ClaimsProviders>
   <UserJourneys>
     <UserJourney Id="SignUpOrSignIn">
